@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 const WIDTH = 480;
 const HEIGHT = 320;
@@ -68,6 +68,11 @@ export default function EuclideanTriangle() {
     <div className="stat-title">Hypotenuse c</div>
     <div className="stat-value text-primary">{c.toFixed(3)}</div>
         <div className="stat-desc">c² = { (a*a + b*b).toFixed(3) }</div>
+    </div>
+    <div className="stat">
+      <div className="stat-title">Pythagoras error</div>
+      <div className="stat-value text-success">{(c*c - (a*a + b*b)).toFixed(6)}</div>
+      <div className="stat-desc">should be 0 in Euclidean space</div>
     </div>
     </div>
 
