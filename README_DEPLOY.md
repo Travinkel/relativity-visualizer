@@ -3,7 +3,7 @@
 This project uses Vite + React. It is configured to deploy automatically to GitHub Pages.
 
 ## How it works
-- `vite.config.ts` sets `base` to `/relativity-visualizer/` so assets resolve correctly when hosted at `https://<username>.github.io/relativity-visualizer/`.
+- `vite.config.ts` uses a relative `base` (`./`) so assets resolve correctly when hosted at `https://<username>.github.io/relativity-visualizer/` or any other path.
 - GitHub Actions workflow `.github/workflows/deploy.yml` builds the site and publishes the `dist/` folder to the `gh-pages` branch on every push to `main` (or `master`).
 
 ## One-time repo settings
@@ -22,4 +22,4 @@ This project uses Vite + React. It is configured to deploy automatically to GitH
 ## Live URL
 `https://<your-username>.github.io/relativity-visualizer/`
 
-If your repository name changes, update `base` in `vite.config.ts` accordingly.
+If your repository name changes, `base` does not need adjustments because it is relative.

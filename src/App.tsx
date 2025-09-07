@@ -3,12 +3,13 @@ import EuclideanTriangle from './components/EuclideanTriangle';
 import MinkowskiDiagram from './components/MinkowskiDiagram';
 import CurvedSpace from './components/CurvedSpace';
 import Labs from './components/Labs';
+import ClockComparison from './components/ClockComparison';
 
 const THEMES = ['night', 'synthwave', 'business'] as const;
 type Theme = typeof THEMES[number];
 
 export default function App() {
-    const [tab, setTab] = useState<'euclid' | 'minkowski' | 'curved' | 'labs'>('minkowski');
+    const [tab, setTab] = useState<'euclid' | 'minkowski' | 'curved' | 'clock' | 'labs'>('minkowski');
     const [theme, setTheme] = useState<Theme>('night');
 
     useEffect(() => {
@@ -62,6 +63,11 @@ export default function App() {
                         Curved Space (GR)
                     </a>
                     <a role="tab"
+                       className={`tab ${tab === 'clock' ? 'tab-active' : ''}`}
+                       onClick={() => setTab('clock')}>
+                        Clock Comparison
+                    </a>
+                    <a role="tab"
                        className={`tab ${tab === 'labs' ? 'tab-active' : ''}`}
                        onClick={() => setTab('labs')}>
                         Labs
@@ -71,6 +77,7 @@ export default function App() {
                 {tab === 'minkowski' && <MinkowskiDiagram />}
                 {tab === 'euclid' && <EuclideanTriangle />}
                 {tab === 'curved' && <CurvedSpace />}
+                {tab === 'clock' && <ClockComparison />}
                 {tab === 'labs' && <Labs />}
             </div>
 
