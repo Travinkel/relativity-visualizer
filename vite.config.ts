@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Use a relative base so the site works on GitHub Pages and local file URLs
-  base: './',
+  // Use repository name as base so assets resolve correctly on GitHub Pages
+  base: '/relativity-visualizer/',
   plugins: [react()],
   resolve: {
     dedupe: ['react', 'react-dom'],
